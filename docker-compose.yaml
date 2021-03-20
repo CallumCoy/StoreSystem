@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  mysql_db_container:
+    image: mysql:latest
+    env_file:
+      - ./config/mysql.env
+    ports:
+      - 3307:3307
+    volumes:
+      - mysql_db_data_container:/var/lib/mysql
+
+  adminer_container:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql_db_container
+      ADMINER_DESIGN: galkaev
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql_db_data_container:
