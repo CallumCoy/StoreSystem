@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+$background: url(./../Images/Warehouse.png);
+
+html {
+  left: 0;
+
+  height: 100%;
+
+  background: $background;
+  align-content: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
